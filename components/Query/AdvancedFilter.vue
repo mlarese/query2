@@ -11,7 +11,7 @@
     <v-layout class="pt-3">
       <v-flex xs4>
         <v-autocomplete
-          :placeholder="$vuetify.t('origin')"
+          :placeholder="$vuetify.t('Product')"
           flat
           hide-details
           hide-selected
@@ -25,7 +25,7 @@
       </v-flex>
       <v-flex xs4>
         <v-autocomplete
-          :placeholder="$vuetify.t('origin')"
+          :placeholder="$vuetify.t('Origin')"
           flat
           hide-details
           hide-selected
@@ -39,7 +39,7 @@
       </v-flex>
       <v-flex xs4>
         <v-autocomplete
-          :placeholder="$vuetify.t('origin')"
+          :placeholder="$vuetify.t('Channel')"
           flat
           hide-details
           hide-selected
@@ -55,7 +55,7 @@
     <v-layout class="pt-3 pb-3">
       <v-flex xs4>
         <v-autocomplete
-          :placeholder="$vuetify.t('origin')"
+          :placeholder="$vuetify.t('Nationality')"
           flat
           hide-details
           hide-selected
@@ -69,7 +69,7 @@
       </v-flex>
       <v-flex xs4>
         <v-autocomplete
-          :placeholder="$vuetify.t('origin')"
+          :placeholder="$vuetify.t('Type Pax')"
           flat
           hide-details
           hide-selected

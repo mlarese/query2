@@ -22,7 +22,6 @@
       <v-flex
         sm3
         class="pt-2">
-        <span class="title">{{ $vuetify.t('Check-In') }}</span>
         <v-menu
           ref="menu2"
           :close-on-content-click="true"
@@ -37,7 +36,8 @@
           <v-text-field
             slot="activator"
             :disabled="filterActive"
-            :label="$vuetify.t('From')"
+            :placeholder="$vuetify.t('From')"
+            :label="$vuetify.t('Check-In')"
             box
             readonly
             append-icon="date_range"
@@ -50,7 +50,6 @@
       <v-flex
         sm3
         class="pt-2">
-        <span>.</span>
         <v-menu
           :close-on-content-click="true"
           v-model="datePickerTo"
@@ -64,7 +63,7 @@
           <v-text-field
             slot="activator"
             :disabled="filterActive"
-            :label="$vuetify.t('To')"
+            :placeholder="$vuetify.t('To')"
             box
             readonly
             append-icon="date_range"
@@ -78,7 +77,6 @@
       <v-flex
         sm3
         class="pt-2">
-        <span class="title">{{ $vuetify.t('Check-Out') }}</span>
         <v-menu
           ref="menu2"
           :close-on-content-click="true"
@@ -93,7 +91,8 @@
           <v-text-field
             slot="activator"
             :disabled="filterActive"
-            :label="$vuetify.t('From')"
+            :placeholder="$vuetify.t('From')"
+            :label="$vuetify.t('Check-Out')"
             box
             readonly
             append-icon="date_range"
@@ -107,7 +106,6 @@
         xs6
         sm3
         class="pt-2">
-        <span>{{ $vuetify.t(' .') }}</span>
         <v-menu
           :close-on-content-click="true"
           v-model="datePickerTo1"
@@ -122,7 +120,7 @@
           <v-text-field
             slot="activator"
             :disabled="filterActive2"
-            :label="$vuetify.t('To')"
+            :placeholder="$vuetify.t('To')"
             box
             readonly
             append-icon="date_range"
@@ -137,7 +135,8 @@
       <v-layout class="pt-3 pb-3">
         <v-flex xs4>
           <v-autocomplete
-            :placeholder="$vuetify.t('Days')"
+            :label="$vuetify.t('Days')"
+            :placeholder="$vuetify.t('Last Booking')"
             flat
             hide-details
             hide-selected
@@ -152,7 +151,7 @@
         <v-flex xs2>
           <v-text-field
             v-model="filter"
-            :label="$vuetify.t('Number')"
+            :placeholder="$vuetify.t('Number')"
             type="number"
             box
             hide-details/>
@@ -160,7 +159,7 @@
         <v-flex xs2>
           <v-text-field
             v-model="filter"
-            :label="$vuetify.t('Number of nights')"
+            :placeholder="$vuetify.t('Number of nights')"
             type="number"
             box
             hide-details/>
