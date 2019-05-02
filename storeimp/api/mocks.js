@@ -1,14 +1,13 @@
 import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios'
-import booking from '../fixtures/booking.json'
-import clients from '../fixtures/clients.json'
+import query from '../fixtures/query.json'
 
 const mock = new MockAdapter(axios, {delayResponse: 300})
 
 mock
   .onGet('/profile').reply(() => [200, user])
   .onGet('/principal').reply(() => [200, user])
-  .onGet('/booking').reply(() => [200, booking])
+  .onGet('/query').reply(() => [200, query])
   .onGet('/clients').reply(() => [200, clients])
   .onPut('/clients/0').reply(() => [200, 0])
   .onPut('/clients/10').reply(() => [200, 10])

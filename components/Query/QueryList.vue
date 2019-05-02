@@ -34,6 +34,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name: "QueryList",
         data () {
@@ -53,6 +54,9 @@
                 headers,
                 pagination: {}
             }
+        },
+        computed: {
+            ...mapState('query', ['search', 'filter'])
         }
     }
 </script>

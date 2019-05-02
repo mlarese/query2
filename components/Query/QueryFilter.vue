@@ -135,8 +135,8 @@
       <v-layout class="pt-3 pb-3">
         <v-flex xs4>
           <v-autocomplete
-            :label="$vuetify.t('Days')"
-            :placeholder="$vuetify.t('Last Booking')"
+            :label="$vuetify.t('Last Booking')"
+            :placeholder="$vuetify.t('Days')"
             flat
             hide-details
             hide-selected

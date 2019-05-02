@@ -10,6 +10,43 @@
     </v-toolbar>
     <v-layout class="pt-3">
       <v-flex xs4>
+        <v-text-field
+          :placeholder="$vuetify.t('Name')"
+          :rules="rules.name"
+          flat
+          hide-details
+          dense
+          box
+          required
+
+        />
+      </v-flex>
+      <v-flex xs4>
+        <v-text-field
+          :placeholder="$vuetify.t('Surname')"
+          :rules="rules.surname"
+          flat
+          hide-details
+          dense
+          box
+          required
+        />
+      </v-flex>
+      <v-flex xs4>
+        <v-text-field
+          :placeholder="$vuetify.t('Email')"
+          :rules="rules.email"
+          flat
+          type="email"
+          hide-details
+          dense
+          box
+          required
+        />
+      </v-flex>
+    </v-layout>
+    <v-layout class="pt-3">
+      <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Product')"
           flat
@@ -18,7 +55,7 @@
           dense
           class="elevation-0"
           item-text="name"
-          item-value="name"
+          item-value="value"
           box
 
         />
@@ -62,7 +99,7 @@
           dense
           class="elevation-0"
           item-text="name"
-          item-value="name"
+          item-value="value"
           box
 
         />
@@ -76,7 +113,7 @@
           dense
           class="elevation-0"
           item-text="name"
-          item-value="name"
+          item-value="value"
           box
 
         />
@@ -88,8 +125,22 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
-        name: "AdvancedFilter"
+        name: "AdvancedFilter",
+
+        data () {
+            return {
+                rules: {
+                    name: [v => !!v || this.$vuetify.t('required')],
+                    surname: [v => !!v || this.$vuetify.t('required')],
+                    email: [v => !!v || this.$vuetify.t('required')]
+                }
+            }
+        },
+        computed: {
+            ...mapState('country', ['$record', 'record'])
+        }
     }
 </script>
 

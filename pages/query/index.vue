@@ -11,10 +11,14 @@
     import AdvancedFilter from "../../components/Query/AdvancedFilter"
     import QueryFilter from "../../components/Query/QueryFilter"
     import QueryList from "../../components/Query/QueryList"
-    export default {
+    const root = {root: true}
 
+    export default {
         name: "Index",
         components: {QueryList, QueryFilter, AdvancedFilter, },
+        fetch ({store}) {
+            store.dispatch('query/load', {}, root)
+        }
     }
 </script>
 
