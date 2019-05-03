@@ -23,12 +23,12 @@
         sm3
         class="pt-2">
         <v-menu
-          ref="menu2"
           :close-on-content-click="true"
           v-model="datePickerFrom"
           :nudge-right="40"
           :return-value.sync="date"
           :disabled="filterActive"
+          transition="scale-transition"
           offset-y
           full-width
           min-width="250px"
@@ -38,6 +38,7 @@
             :disabled="filterActive"
             :placeholder="$vuetify.t('From')"
             :label="$vuetify.t('Check-In')"
+            v-model="fltDateFrom"
             box
             readonly
             append-icon="date_range"
@@ -137,6 +138,7 @@
           <v-autocomplete
             :label="$vuetify.t('Last Booking')"
             :placeholder="$vuetify.t('Days')"
+            v-model="filter"
             flat
             hide-details
             hide-selected
@@ -150,7 +152,7 @@
         </v-flex>
         <v-flex xs2>
           <v-text-field
-            v-model="filter"
+            v-model="record"
             :placeholder="$vuetify.t('Number')"
             type="number"
             box
@@ -158,7 +160,7 @@
         </v-flex>
         <v-flex xs2>
           <v-text-field
-            v-model="filter"
+            v-model="record.nights"
             :placeholder="$vuetify.t('Number of nights')"
             type="number"
             box
@@ -170,6 +172,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name: "QueryFilter",
         data () {
@@ -183,6 +186,9 @@
                 pagination: {}
             }
         },
+        computed: {
+            ...mapState('query', ['$record', 'record', 'list', 'filterActive'])
+        }
     }
 </script>
 

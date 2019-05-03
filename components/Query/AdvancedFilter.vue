@@ -12,6 +12,7 @@
       <v-flex xs4>
         <v-text-field
           :placeholder="$vuetify.t('Name')"
+          v-model="record"
           :rules="rules.name"
           flat
           hide-details
@@ -24,6 +25,7 @@
       <v-flex xs4>
         <v-text-field
           :placeholder="$vuetify.t('Surname')"
+          v-model="record"
           :rules="rules.surname"
           flat
           hide-details
@@ -35,6 +37,7 @@
       <v-flex xs4>
         <v-text-field
           :placeholder="$vuetify.t('Email')"
+          v-model="record"
           :rules="rules.email"
           flat
           type="email"
@@ -49,6 +52,7 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Product')"
+          v-model="filter"
           flat
           hide-details
           hide-selected
@@ -63,6 +67,7 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Origin')"
+          v-model="filter"
           flat
           hide-details
           hide-selected
@@ -77,6 +82,7 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Channel')"
+          v-model="filter"
           flat
           hide-details
           hide-selected
@@ -93,6 +99,7 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Nationality')"
+          v-model="filter"
           flat
           hide-details
           hide-selected
@@ -107,6 +114,7 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Type Pax')"
+          v-model="filter"
           flat
           hide-details
           hide-selected
@@ -139,7 +147,7 @@
             }
         },
         computed: {
-            ...mapState('country', ['$record', 'record'])
+            ...mapState('query', ['$record', 'record', 'list', 'filterActive'])
         }
     }
 </script>

@@ -34,7 +34,7 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+    import {mapState, mapActions} from 'vuex'
     export default {
         name: "QueryList",
         data () {
@@ -56,8 +56,15 @@
             }
         },
         computed: {
-            ...mapState('query', ['search', 'filter'])
+            ...mapState('query', ['list', 'filterActive'])
+        },
+        methods: {
+            ...mapActions('query', ['preload']),
+            onFilter () {
+                this.preload()
+            }
         }
+
     }
 </script>
 
