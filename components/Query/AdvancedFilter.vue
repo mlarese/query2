@@ -52,7 +52,7 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Product')"
-          v-model="filter"
+          v-model="filter.product"
           flat
           hide-details
           hide-selected
@@ -67,7 +67,8 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Origin')"
-          v-model="filter"
+          :item="list"
+          v-model="filter.origin"
           flat
           hide-details
           hide-selected
@@ -147,7 +148,7 @@
             }
         },
         computed: {
-            ...mapState('query', ['$record', 'record', 'list', 'filterActive'])
+            ...mapState('query', ['$record', 'record', 'list', 'filter'])
         }
     }
 </script>
